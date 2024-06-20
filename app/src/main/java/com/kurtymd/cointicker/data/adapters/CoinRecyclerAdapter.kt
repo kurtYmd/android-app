@@ -40,9 +40,6 @@ class CoinRecyclerAdapter(
         }
     }
 
-    /**
-     * @return true if added to watchlist false otherwise
-     */
     fun toggleWatchList(coin: Coin,position: Int): Boolean = watchlistIds.indexOf(coin.id).let { index ->
         if(index > -1) watchlistIds.removeAt(index)
         else watchlistIds.add(coin.id)

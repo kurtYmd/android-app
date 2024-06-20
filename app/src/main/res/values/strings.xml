@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Coin Ticker</string>
+    <string name="app_name">Crypto List</string>
 
     <!-- Common -->
     <string name="undo">UNDO</string>

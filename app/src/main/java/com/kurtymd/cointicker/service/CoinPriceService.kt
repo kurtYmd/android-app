@@ -62,7 +62,6 @@ class CoinPriceService : Service() {
     }
 
     inner class CoinPriceServiceBinder : Binder() {
-        // Return this instance of LocalService so clients can call public methods
         fun getService(): CoinPriceService = this@CoinPriceService
     }
 

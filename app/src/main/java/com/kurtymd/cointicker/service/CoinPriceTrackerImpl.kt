@@ -17,7 +17,7 @@ class CoinPriceTrackerImpl @Inject constructor(
     override var priceChangeListener: PriceChangeListener? = null
 
     companion object {
-        private const val UPDATE_PERIOD_IN_SECS: Long = 10
+        private const val UPDATE_PERIOD_IN_SECS: Long = 1000
     }
 
     override fun startTracking() {

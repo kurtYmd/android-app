@@ -6,11 +6,13 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.view.*
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -35,7 +37,6 @@ abstract class CoinRecyclerListFragment : Fragment() {
     protected var nextWatchListClickHandler: ((item: Coin, position: Int, added: Boolean)-> Unit)? = null
 
     private lateinit var coinPriceService: CoinPriceService
-    //private var isServiceBound: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -144,6 +145,7 @@ abstract class CoinRecyclerListFragment : Fragment() {
         builder.show()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun handleUiState(uiState: CoinsState, binding: FragmentListBinding) {
         //handle coin state
         binding.swipeRefreshLayout.isRefreshing = uiState.coins is Resource.Loading
@@ -173,7 +175,6 @@ abstract class CoinRecyclerListFragment : Fragment() {
     private val connection = object : ServiceConnection {
 
         override fun onServiceConnected(className: ComponentName, service: IBinder) {
-            // We've bound to LocalService, cast the IBinder and get LocalService instance
             val binder = service as CoinPriceService.CoinPriceServiceBinder
             coinPriceService = binder.getService()
             coinPriceService.priceChangeListener = priceChangeListener
