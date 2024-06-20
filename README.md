@@ -31,7 +31,16 @@ MPAndroidChart: To chart the financial data.
 Retrofit: For making HTTP requests.
 
 
+## Setup
 
+Clone the repository:
 ```bash
-
+git clone https://github.com/yourusername/your-repo-name.git
 ```
+
+
+Open the project in Android Studio.
+
+Build the project and resolve any dependencies.
+
+Run the project on an emulator or a physical device.
