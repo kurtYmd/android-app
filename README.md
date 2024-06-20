@@ -35,7 +35,7 @@ This project uses the MVVM
 
 * Clone the repository:
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/kurtYmd/android-app.git
 ```
 
 
