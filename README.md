@@ -20,7 +20,7 @@ CryptoList is a simple yet powerful application designed for cryptocurrency enth
 
 ## Architecture
 
-This project uses the MVVM
+This project uses the MVVM architectural pattern.
 
 
 ## Libraries Used
